@@ -1,8 +1,7 @@
 import java.awt.*; // Importa uma ferramenta para organizar a tela como uma grade (linhas e colunas)
 //import java.awt.event.ActionEvent; // Importa a ferramenta que "entende" quando algo acontece (tipo um clique)
 import java.awt.event.*; // Importa algo que "ouve" e responde quando o botão é clicado
-import java.util.ArrayList; // Importa uma lista onde podemos guardar várias coisas (como letras ou números)
-
+import java.util.*; // Importa uma lista onde podemos guardar várias coisas (como letras ou números)
 import javax.swing.*; // Importa um botão para clicar
 //import javax.swing.JFrame; // Importa a janela onde vai ficar nossa calculadora
 //import javax.swing.JLabel; // Importa o texto que aparece na tela (rótulos)
@@ -53,6 +52,28 @@ public class Calculator extends JFrame {
       // Diz para o botão o que fazer quando for clicado
       TextFieldHandler handler = new TextFieldHandler();
       btnCalcular.addActionListener(handler); // Conecta o "ouvinte" para o botão
+
+      textField1.addKeyListener(new KeyAdapter() {
+         @Override
+         public void keyReleased (KeyEvent e) {
+            if(textField1.getText().length() > 9) {
+               String txtField1 = textField1.getText();
+               textField1.setText(txtField1.substring(0,9)); 
+               lblNotificacao.setText("Ops! Este campo está limitado a apenas 9 caracteres.");
+            }
+         }
+      });
+
+      textField2.addKeyListener(new KeyAdapter() {
+         @Override
+         public void keyReleased (KeyEvent e) {
+            if(textField2.getText().length() > 9) {
+               String txtField2 = textField2.getText();
+               textField2.setText(txtField2.substring(0,9)); 
+               lblNotificacao.setText("Ops! Este campo está limitado a apenas 9 caracteres.");
+            }
+         }
+      });
    }
 
    // Essa parte é para "ouvir" quando o botão é clicado 
