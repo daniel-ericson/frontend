@@ -8,13 +8,14 @@ public class ComboBoxFrame extends JFrame // Criação da classe ComboBoxFrame q
    private final JLabel label; // Label que exibe o ícone selecionado.
 
    private static final String[] names = 
-      {"bug1.gif", "bug2.gif",  "travelbug.gif", "buganim.gif"};// Nomes de arquivos de imagem.
+      {"bug1.gif", "bug2.gif",  "travelbug.gif", "buganim.gif","extremeBug.png"};// Nomes de arquivos de imagem.
    private final Icon[] icons = 
    { 
       new ImageIcon(getClass().getResource(names[0])),// Cria um ícone a partir do primeiro nome de arquivo.
       new ImageIcon(getClass().getResource(names[1])), // Cria um ícone a partir do primeiro nome de arquivo.
       new ImageIcon(getClass().getResource(names[2])),// Cria um ícone a partir do primeiro nome de arquivo.
-      new ImageIcon(getClass().getResource(names[3]))};// Cria um ícone a partir do primeiro nome de arquivo.
+      new ImageIcon(getClass().getResource(names[3])), // Cria um ícone a partir do primeiro nome de arquivo.
+      new ImageIcon(getClass().getResource(names[4]))};// Cria um ícone a partir do primeiro nome de arquivo.
       
    // O construtor ComboBoxFrame adiciona JComboBox ao JFrame
    public ComboBoxFrame()
@@ -23,7 +24,7 @@ public class ComboBoxFrame extends JFrame // Criação da classe ComboBoxFrame q
       setLayout(new FlowLayout()); // Define o layout do frame como FlowLayout (a janela é responsiva).
   
       imagesJComboBox = new JComboBox<String>(names); // Cria o JComboBox com os nomes dos ícones.
-      imagesJComboBox.setMaximumRowCount(3); // Define o máximo de três linhas visíveis na lista suspensa.
+      imagesJComboBox.setMaximumRowCount(4); // Define o máximo de três linhas visíveis na lista suspensa.
   
       imagesJComboBox.addItemListener(
           new ItemListener() // Classe interna para tratar eventos do JComboBox.
