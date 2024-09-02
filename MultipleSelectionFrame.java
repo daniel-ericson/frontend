@@ -59,7 +59,7 @@ public class MultipleSelectionFrame extends JFrame
             @Override
             public void actionPerformed(ActionEvent event)
             {
-               // Copia os valores selecionados de colorJList para copyJList.
+               // Copia os valores selecionados de copyJList para copyJList2.
                copyJList2.setListData(
                   copyJList.getSelectedValuesList().toArray(
                      new String[0]));
