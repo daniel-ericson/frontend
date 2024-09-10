@@ -15,11 +15,11 @@ public class MySQLConnector {
         
         try {
             // Carrega a classe do driver JDBC do MySQL e cria uma variável.
-            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             // Estabelece a conexão com o banco de dados.
             conn = DriverManager.getConnection(mysqlUrl);
             status = "Conexão realizada com sucesso!"; // Mensagem de sucesso na conexão.
-        } catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+        } catch (Exception e) {
             // Captura qualquer exceção que ocorra durante a conexão e atualiza o status com a mensagem de erro.
             status = "Ops! Algo de errado não está certo com a conexão com o banco de dados MySQL! Mensagem do servidor: " + e;
         }
