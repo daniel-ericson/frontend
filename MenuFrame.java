@@ -153,7 +153,7 @@ public class MenuFrame extends JFrame // Classe MenuFrame que herda de JFrame.
          // Processa a seleção de cor.
          for (int count = 0; count < colorItems.length; count++)
          {
-            if (colorItems[count].isSelected()) 
+            if (colorItems[count].isSelected()) // Se o item de cor estiver selecionado. 
             {
                displayJLabel.setForeground(colorValues[count]); // Altera a cor do texto.
                break;
@@ -163,7 +163,7 @@ public class MenuFrame extends JFrame // Classe MenuFrame que herda de JFrame.
          // Processa a seleção de fonte.
          for (int count = 0; count < fonts.length; count++)
          {
-            if (event.getSource() == fonts[count]) 
+            if (event.getSource() == fonts[count]) // Objeto do "click". 
             {
                displayJLabel.setFont(
                   new Font(fonts[count].getText(), style, 72)); // Altera a fonte do texto.
@@ -186,11 +186,11 @@ public class MenuFrame extends JFrame // Classe MenuFrame que herda de JFrame.
          // Verifica quais caixas de seleção estão marcadas e cria a fonte correspondente.
          if (styleItems[0].isSelected() && 
               styleItems[1].isSelected())
-            font = new Font(name, Font.BOLD + Font.ITALIC, 72); // Negrito e itálico.
+            font = new Font(name, Font.BOLD + Font.ITALIC, 72); // Atribui negrito e itálico.
          else if (styleItems[0].isSelected())
-            font = new Font(name, Font.BOLD, 72); // Apenas negrito.
+            font = new Font(name, Font.BOLD, 72); // Atribui apenas negrito.
          else if (styleItems[1].isSelected())
-            font = new Font(name, Font.ITALIC, 72); // Apenas itálico.
+            font = new Font(name, Font.ITALIC, 72); // Atribui apenas itálico.
          else
             font = new Font(name, Font.PLAIN, 72); // Estilo normal.
 
